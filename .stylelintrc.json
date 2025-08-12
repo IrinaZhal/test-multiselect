@@ -1,0 +1,45 @@
+{
+  "extends": ["stylelint-config-standard"],
+  "plugins": ["stylelint-order", "stylelint-prettier"],
+  "rules": {
+    "prettier/prettier": true,
+    "selector-pseudo-class-no-unknown": [
+      true,
+      { "ignorePseudoClasses": ["global"] }
+    ],
+
+    "selector-class-pattern": null,
+
+    "order/order": ["custom-properties", "declarations", "rules", "at-rules"],
+
+    "order/properties-order": [
+      "position",
+      "top",
+      "right",
+      "bottom",
+      "left",
+      "z-index",
+      "display",
+      "flex",
+      "flex-direction",
+      "justify-content",
+      "align-items",
+      "width",
+      "height",
+      "margin",
+      "padding",
+      "border",
+      "background",
+      "color",
+      "font",
+      "font-size",
+      "font-weight",
+      "line-height",
+      "text-align",
+      "text-decoration",
+      "box-shadow",
+      "opacity",
+      "transition"
+    ]
+  }
+}
