@@ -1,0 +1,35 @@
+.tag {
+  display: flex;
+  align-items: center;
+  padding: 9px;
+  color: black;
+  font-size: 16px;
+  border-radius: 9999px;
+  font-family: Roboto, sans-serif;
+  background-color: #efedfb;
+  gap: 12px;
+  margin-bottom: 0;
+}
+
+.deleteButton {
+  display: flex;
+  align-items: center;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  align-self: start;
+}
+
+.icon {
+  height: 10px;
+  pointer-events: none;
+}
+
+.deleteButton:hover {
+  opacity: 0.5;
+}
+
+.text {
+  margin-left: 12px;
+}

@@ -1,69 +1,27 @@
-# React + TypeScript + Vite
+# Тестовое задание по созданию кастомного дропдауна
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Стек: React, TypeScript, Vite, CSS-modules
 
-Currently, two official plugins are available:
+## Инструкция
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Установите зависимости
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Запуск проекта
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
 ```
+npm run dev
+```
+
+## ТЗ и функциональность
+
+Создан компонент Multiselect, который принимает необходимые пропсы(), и является кастомным дропдауном с возможностью выбора нескольких опций и поиском.
+
+- placeholder - необзательный пропс, если он введен - то будет показан, если нет - то будет показана базовая фраза "Выберите опции". Когда опции выбраны - текст плейсхолдера заменяет фраза "Выбрано опций: {количество опций}".
+- клик по опции - добавляет ее в список выбранных, повторный клик - убирает.
+- клик вне компонента - закрывает дропдаун.
+- если есть выбранные опции - появляется кнопка "Убрать все опции". Кнопка "Убрать все опции" только очишает список выбранных, но не закрывает дропдаун, при необходимости это можно изменить.
+- сверху страницы для демонстрации и дополнительной функциональности добавлен компонент TagList: он показывает выбранные опции в виде тэгов с возможностью удаления их по клику на кнопку.
