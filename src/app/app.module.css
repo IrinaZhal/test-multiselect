@@ -1,4 +1,10 @@
-.title {
-  color: red;
-  font: inherit;
+@import url('../shared/styles/global.css');
+@import url('../shared/styles/fonts.css');
+
+.page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
